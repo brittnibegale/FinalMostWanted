@@ -50,8 +50,7 @@ function creatingFirstAndLastNameOnly(peoplesTraitInformation, people){
 function refiningTraitSearch(peoplesTraitInformation, people){
   if (peoplesTraitInformation.length === 1){
     mainMenu(peoplesTraitInformation, people)
-        //go to displaying person and prompt for finding decendents (mainmenu)
-        } 
+  } 
     else if (peoplesTraitInformation.length > 1){
       var refiningSearch = promptFor("Your current search has" + " " + peoplesTraitInformation.length + " results. Would you like to refine your search by searching more traits? Please enter: yes or no", yesNo).toLowerCase();
           if (refiningSearch === "yes"){
@@ -70,7 +69,7 @@ function refiningTraitSearch(peoplesTraitInformation, people){
               }
           }
         
-  }
+    }
 }
 
 function searchByTrait(people){
@@ -98,7 +97,7 @@ function searchByTrait(people){
     if (Array.isArray(peoplesWeightSearch) === true && peoplesWeightSearch.length >= 1){
       peoplesTraitInformation = peoplesWeightSearch;
       var refinedPeopleByTrait = refiningTraitSearch(peoplesTraitInformation, people);
-      }
+    }
       else if (peoplesWeightSearch.length === 0){
         var notAWeight = promptFor("That was not a weight that matched a person in our database. Would you like to re-try entering the person's weight? yes or no", yesNo).toLowerCase();
           if (notAWeight === 'yes'){
@@ -114,7 +113,7 @@ function searchByTrait(people){
     if (Array.isArray(peoplesHeightSearch) === true && peoplesHeightSearch.length >= 1){
       peoplesTraitInformation = peoplesHeightSearch;
       var refinedPeopleByTrait = refiningTraitSearch(peoplesTraitInformation, people);
-      }
+    }
       else if (peoplesHeightSearch.length === 0){
         var notAHeight = promptFor("That was not a height that matched a person in our database. Would you like to re-try entering the person's height? yes or no", yesNo).toLowerCase();
           if (notAHeight === 'yes'){
@@ -130,7 +129,7 @@ function searchByTrait(people){
     if (peoplesOccupationSearch.length >= 1){
      peoplesTraitInformation = peoplesOccupationSearch;
      var refinedPeopleByTrait = refiningTraitSearch(peoplesTraitInformation, people);
-      }
+    }
       else if (peoplesOccupationSearch.length === 0){
         var notAnOccupation = promptFor("That was not an occupation that matched a person in our database. Would you like to re-try entering the person's occupation? yes or no", yesNo).toLowerCase();
           if (notAnOccupation === 'yes'){
@@ -146,7 +145,7 @@ function searchByTrait(people){
     if (Array.isArray(peoplesAgeSearch) === true && peoplesAgeSearch.length >= 1){
      peoplesTraitInformation = peoplesAgeSearch;
      var refinedPeopleByTrait = refiningTraitSearch(peoplesTraitInformation, people);
-      }
+    }
       else if (peoplesAgeSearch.length === 0){
         var notAnAge = promptFor("That was not an age that matched a person in our database. Would you like to re-try entering the person's age? 'Yes' or 'No'", yesNo).toLowerCase();
           if (notAnAge === 'yes'){
@@ -361,10 +360,10 @@ function creatingFirstAndLastName(person){
 			}
 		}
 	});	
-	for (var i = 0; i < children.length; i++) {
-		children = children.concat(listOfDescendants(children[i], people));
-	}
-	return children;
+	     for (var i = 0; i < children.length; i++) {
+		    children = children.concat(listOfDescendants(children[i], people));
+	     }
+	     return children;
 }
  
  function listOfFamily(person, people){
@@ -375,7 +374,7 @@ function creatingFirstAndLastName(person){
    var childrenName = creatingFirstAndLastName(childrenArray);
    var siblingsArray = findSiblings(person, people);
    var siblingsName = creatingFirstAndLastName(siblingsArray);
-   var familyInfo = "Spouse:" + " " + spouseName + "\n " + "Parents:"+ " " + parentsNames + "\n " + "Children:" + " " +  childrenName + "\n" + "Siblings:" + " " + siblingsName; // put listOfSibllings in when its working
+   var familyInfo = "Spouse:" + "\n " + spouseName + "\n " + "Parents:"+ "\n " + parentsNames + "\n " + "Children:" + "\n " +  childrenName + "\n" + "Siblings:" + "\n " + siblingsName; 
    alert(familyInfo);
 }
 
